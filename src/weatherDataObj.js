@@ -1,45 +1,45 @@
 export const weatherData = {
 "coord": {
-"lon": 50.0094,
-"lat": 36.2546
+"lon": 0.0,
+"lat": 0.0
 },
 "weather": [
 {
 "id": 802,
 "main": "Clouds",
-"description": "scattered clouds",
-"icon": "03d"
+"description": "",
+"icon": "100d"
 }
 ],
 "base": "stations",
 "main": {
-"temp": 24.13,
-"feels_like": 23.41,
-"temp_min": 24.13,
-"temp_max": 24.13,
-"pressure": 1011,
-"humidity": 31,
+"temp": 0.0,
+"feels_like": 0.0,
+"temp_min": 0.0,
+"temp_max": 0.0,
+"pressure": 0.0,
+"humidity": 0.0,
 "sea_level": 1011,
 "grnd_level": 874
 },
 "visibility": 10000,
 "wind": {
-"speed": 5.52,
+"speed": 0.0,
 "deg": 335,
 "gust": 4.97
 },
 "clouds": {
 "all": 32
 },
-"dt": 1653750288,
+"dt": 0.0,
 "sys": {
 "country": "",
-"sunrise": 1653701150,
-"sunset": 1653752935
+"sunrise": 0.0,
+"sunset": 0.0
 },
-"timezone": 16200,
+"timezone": 0.0,
 "id": 6660023,
-"name": "Loading...",
+"name": "Choose your city to start",
 "cod": 200
 }
 

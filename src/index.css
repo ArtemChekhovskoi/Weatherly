@@ -32,7 +32,7 @@ Typography
 
 .sidebar--location-text p {
   color: #333333;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
   margin: 0 0 0 1rem;
 }
@@ -144,6 +144,7 @@ LAYOUT
 
 .main-content {
   display: flex;
+  height: 100vh;
 }
 
 .main-content--container {
@@ -154,9 +155,10 @@ LAYOUT
 }
 
 .sidebar--main-container{
- 
+  height: 100vh;
   max-width: 320px;
   padding: 2.5rem 2rem;
+  
 }
 
 .humidity--main-container {
@@ -189,7 +191,7 @@ LAYOUT
 }
 
 .sidebar--location-text {
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 
@@ -412,7 +414,8 @@ LAYOUT
 
   .today--dashboard,
   .sidebar--location-text,
-  .weekly-weather-row {
+  .weekly-weather-row,
+  .sidebar--location-text {
     justify-content: center;
   }
 }

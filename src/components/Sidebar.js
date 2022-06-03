@@ -34,7 +34,7 @@ export default function Sidebar(props) {
         <div className="sidebar--main-container">
             
             <div className="sidebar--search-container">
-                <img src={searchIcon} alt="search-icon"/>
+                <img className="sidebar--search-icon" src={searchIcon} alt="search-icon"/>
                 <div>
                     
                     <PlacesAutocomplete
@@ -46,7 +46,7 @@ export default function Sidebar(props) {
                         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
                             
                         <div>
-                            <input {...getInputProps({ placeholder: "Type your city" })} />
+                            <input {...getInputProps({ placeholder: "Type your city or district" })} />
                             <div className="sidebar--suggestions">
                             
                             {loading ? <div>...loading</div> : null}
@@ -79,7 +79,7 @@ export default function Sidebar(props) {
                 <div className="sidebar--location-text">
                 <img className="sidebar--geo-icon" src={windGeo} alt="geo icon"/>
                 <p>
-                    {weather.name}, {weather.sys.country} 
+                    {weather.name} {`${weather.sys.country ? ", " + weather.sys.country : ""}`} 
                 </p>
                 </div>
             </div>

@@ -19,14 +19,17 @@ export default function WeeklyWeather() {
             'Fri',
             'Sun'
           ];
-
-        return days[currentDay.getDay()]
+        if (timestamp == 0) {
+            return " "
+        } else {
+            return days[currentDay.getDay()] + ", "
+        }
     }
 
     function forecastHtml(day) {
         return(
             <div key={day.dt} className="daily-weather--main-container container">
-                <p className="daily--title">{getCorrectDay(day.dt_txt)}, {getTime(day.dt)}</p>
+                <p className="daily--title">{getCorrectDay(day.dt_txt)}{getTime(day.dt)}</p>
                 <p className="daily--description">{day.weather[0].description}</p>
                 <img src={require(`../img/${day.weather[0].icon}.png`)} 
                     alt="weather icon" />
