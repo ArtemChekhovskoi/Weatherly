@@ -68,3 +68,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+- попап на старте, которій предлагает выбрать локацию или начать поиск
+- локацию вынести наверх и там же предложить начать поиск
+- ветер на карточках с погодой на день
+- сделать визуально более наглядным переключатель день/5 дней
+- поменять тогл влажности
+- добавить новіе показатели в дневной отчет
+- показать направление ветра
+- по умолчанию для всех поставить Киев
+- обїяснялки для плашек со влажностью и ветром
+- кликабельная карта в нижнем углу
