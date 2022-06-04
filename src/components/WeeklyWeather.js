@@ -2,6 +2,7 @@ import React, {useContext} from "react"
 import { CurrentWeather } from "../Context"
 import SwitchUnits from "../utils/switchUnits"
 import { getTime } from "../utils/getTime"
+import {nanoid} from "nanoid"
 
 
 export default function WeeklyWeather() {
@@ -19,16 +20,16 @@ export default function WeeklyWeather() {
             'Fri',
             'Sun'
           ];
-        if (timestamp == 0) {
+        if (timestamp === 0) {
             return " "
         } else {
-            return days[currentDay.getDay()] + ", "
+            return days[currentDay.getDay()]
         }
     }
 
     function forecastHtml(day) {
         return(
-            <div key={day.dt} className="daily-weather--main-container container">
+            <div key={nanoid()} className="daily-weather--main-container container">
                 <p className="daily--title">{getCorrectDay(day.dt_txt)}{getTime(day.dt)}</p>
                 <p className="daily--description">{day.weather[0].description}</p>
                 <img src={require(`../img/${day.weather[0].icon}.png`)} 
@@ -41,7 +42,7 @@ export default function WeeklyWeather() {
             </div>
     )
     }
-    console.log(forecast)
+   
     
     const forecastArray = isWeeklyForecast ? 
     
@@ -56,6 +57,8 @@ export default function WeeklyWeather() {
            return forecastHtml(day)
         }
     })
+
+    console.log(forecastArray)
 
     return(
         <div className="weekly-weather-row">

@@ -9,9 +9,9 @@ const CurrentWeather = React.createContext()
 
 function GetCurrentWeather(props) {
 
-    const [forecast, setForecast] = useState(defaultForecast)
     const [units, setUnits] = useState("metric")
     const [isWeeklyForecast, setIsWeeklyForecast] = useState(false)
+    const [forecast, setForecast] = useState(defaultForecast)
     const [weatherObj, setWeatherObj] = useState(weatherData)
     const [coord, setCoord] = useState()
 

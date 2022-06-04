@@ -23,7 +23,7 @@ export default function WindStatus() {
             <div className="wind--geo">
                 <img src={windGeo} alt="geo logo" />
                 <p>
-                    {weather.name}, {weather.sys.country}
+                {weather.name} {`${weather.sys.country ? ", " + weather.sys.country : ""}`}
                 </p>
             </div>
         </div>

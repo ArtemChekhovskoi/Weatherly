@@ -2,10 +2,10 @@ function getTime(timestamp) {
     let date = new Date(timestamp * 1000)
     let hours = date.getHours()
     let minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()
-    if (timestamp == 0) {
+    if (timestamp === 0) {
         return ""
     } else {
-        return `${hours}:${minutes}`
+        return ", " + `${hours}:${minutes}`
 }
 }
 

@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { CurrentWeather } from "../Context";
 import searchIcon from "../img/searchIcon.svg";
-import geo from "../img/geoIcon.svg"
 import okEmoji from "../img/1200px-Emoji_u1f44c.svg.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
@@ -93,7 +92,7 @@ export default function Sidebar(props) {
                 {SwitchUnits()}
             </h2>
             <p className="sidebar--subtitle">
-               on {getDayOfTheWeek(weather.dt)}, <span>{getTime(weather.dt)}</span>
+               on {getDayOfTheWeek(weather.dt)}<span>{getTime(weather.dt)}</span>
             </p>
             <div className="sidebar--rain-chanse">
                 <img src={okEmoji} alt="weather icon" className="sidebar--ok-emoji"/>
