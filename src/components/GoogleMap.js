@@ -25,6 +25,7 @@ export default function RenderMap(props) {
 
   return (
   <div className="googlemap--container">
+      <button className="googlemap-close-button" onClick={props.hideMap}>x</button>
       <GoogleMap 
             zoom={6} 
             center={startPosition} 
