@@ -12,6 +12,7 @@ import PlacesAutocomplete, {
     geocodeByAddress,
     getLatLng
   } from "react-places-autocomplete";
+import RenderMap from "./GoogleMap.js";
 
 
 export default function Sidebar(props) {
@@ -71,9 +72,8 @@ export default function Sidebar(props) {
                         )}
                     </PlacesAutocomplete>
                 </div>
-                    
-                                
             </div>
+            
             <div className="sidebar--location">
                 <div className="sidebar--location-text">
                 <img className="sidebar--geo-icon" src={windGeo} alt="geo icon"/>
@@ -110,9 +110,11 @@ export default function Sidebar(props) {
                     <FontAwesomeIcon icon={faArrowDown} /> 
                     min: {weather.main.temp_min.toFixed(1)}{SwitchUnits()}
                 </p>
-                 
+                
                 
             </div>
+            <RenderMap />
+            
             
         </div>
     )
