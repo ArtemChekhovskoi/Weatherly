@@ -8,7 +8,7 @@ import { CurrentWeather } from "../Context";
 export default function RenderMap(props) {
   const {newCoordinates} = useContext(CurrentWeather)
   const startPosition = React.useMemo(() => ({lat:50, lng: 32}), [])
-  const [markers, setMarkers] = React.useState({lat: 1, lon: 1})
+  const [markers, setMarkers] = React.useState({})
 
   function markerAction(event) {
     setMarkers( 
@@ -18,11 +18,13 @@ export default function RenderMap(props) {
       },
     )
     newCoordinates(event.latLng.lat(), event.latLng.lng())
- 
+    if(event.latLng.lat()) {
+      props.hideMap()
+    }
   } 
 
   return (
-  <div className="googlemap--container" onClick={props.hideMap}>
+  <div className="googlemap--container">
       <GoogleMap 
             zoom={6} 
             center={startPosition} 
