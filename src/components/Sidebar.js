@@ -18,6 +18,7 @@ import RenderMap from "./GoogleMap.js";
 export default function Sidebar(props) {
     const {weather, newCoordinates} = useContext(CurrentWeather)
     const [address, setAddress] = React.useState("");
+    const [isMapShown, setIsMapShown] = React.useState(false)
 
   const handleSelect = async value => {
     const results = await geocodeByAddress(value);
@@ -28,10 +29,17 @@ export default function Sidebar(props) {
     console.log(latLng)
   };
 
+  function ShowMap() {
+    return (
+    <div className="map-popup">
+        <RenderMap hideMap={() => setIsMapShown(prevState => !prevState)}/>
+    </div>
+    )
+  }
 
 
     return(
-        <div className="sidebar--main-container">
+        <div className={`sidebar--main-container`}>
             
             <div className="sidebar--search-container">
                 <img className="sidebar--search-icon" src={searchIcon} alt="search-icon"/>
@@ -73,8 +81,8 @@ export default function Sidebar(props) {
                     </PlacesAutocomplete>
                 </div>
             </div>
-            
-            <div className="sidebar--location">
+
+            <div className="sidebar--location" onClick={() => setIsMapShown(prevState => !prevState)}>
                 <div className="sidebar--location-text">
                 <img className="sidebar--geo-icon" src={windGeo} alt="geo icon"/>
                 <p>
@@ -82,6 +90,7 @@ export default function Sidebar(props) {
                 </p>
                 </div>
             </div>
+            {isMapShown ? <ShowMap /> : ""}
 
             <img 
                 src={require(`../img/${weather.weather[0].icon}.png`)} 
@@ -113,7 +122,6 @@ export default function Sidebar(props) {
                 
                 
             </div>
-            <RenderMap />
             
             
         </div>

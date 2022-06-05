@@ -96,7 +96,6 @@ Typography
 .sidebar--img-description {
   margin-top: 2rem;
   display: block;
-  z-index: -1;
 }
 
 .sidebar-paragraph {
@@ -106,6 +105,8 @@ Typography
 .daily-weather--main-container p span,
 .daily-weather--main-container p span sup {
   color: #999999;
+  position: inherit;
+  vertical-align: top;
 }
 
 .highlight {
@@ -267,7 +268,6 @@ LAYOUT
   position: fixed;
   padding: 1rem;
   display: block;
-  z-index: 999;
 }
 
 .sidebar--search-container input {
@@ -428,9 +428,25 @@ LAYOUT
 
 /*MAP STYLING*/
 
+.googlemap--container {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
 .google-map {
-  width: 250px;
-  height: 300px;
+  width: 700px;
+  height: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+  
 }
 
 
