@@ -1,14 +1,14 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import React, {useContext} from "react";
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, Marker } from "@react-google-maps/api";
 import { CurrentWeather } from "../Context";
 
 
 
 export default function RenderMap(props) {
   const {newCoordinates} = useContext(CurrentWeather)
-  const startPosition = React.useMemo(() => ({lat:50, lng: 32}), [])
-  const [markers, setMarkers] = React.useState({})
+  const startPosition = useMemo(() => ({lat:50, lng: 32}), [])
+  const [markers, setMarkers] = useState({})
 
   function markerAction(event) {
     setMarkers( 
