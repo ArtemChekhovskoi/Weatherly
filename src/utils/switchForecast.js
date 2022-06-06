@@ -1,15 +1,9 @@
-import React, {useContext} from "react"
+import React, { useContext } from "react"
 import { CurrentWeather } from "../Context"
-import SwitchUnits from "../utils/switchUnits"
-import { getTime } from "../utils/getTime"
-import {nanoid} from "nanoid"
 
+export default function SwitchForecast() {
+    const {isWeeklyForecast} = useContext(CurrentWeather)
 
-export default function WeeklyWeather() {
-
-    const {forecast, isWeeklyForecast, turnWeeklyForecast, turnDailyForecast} = useContext(CurrentWeather)
-    const currentForecastStyle = {color: "#5B9BFC"}
-    
     function getCorrectDay(timestamp) {
         let currentDay = new Date(timestamp)
         var days = [
@@ -45,32 +39,20 @@ export default function WeeklyWeather() {
     }
    
     
-    const weeklyArray =  forecast.list.map((day, index) => {
+    const forecastArray = isWeeklyForecast ? 
+    
+    forecast.list.map((day, index) => {
         if(index === 0 || index%8 === 0) {
             return forecastHtml(day)
         } 
     })
     
-    const dayArray = forecast.list.map((day, index) => {
+    : forecast.list.map((day, index) => {
         if (index < 6) {
            return forecastHtml(day)
         }
     })
 
-    return(
-        <div className="weekly-weather--main-container">
-            <div className="header--today-week">
-                <a 
-                style={isWeeklyForecast ? {} : currentForecastStyle}
-                onClick={turnDailyForecast}
-                href="#">Today</a>
-                <a style={isWeeklyForecast ? currentForecastStyle : {}}
-                onClick={turnWeeklyForecast}
-                href="#">5 Days</a>
-            </div>
-            <div className="weekly-weather-row">
-                {isWeeklyForecast ? weeklyArray : dayArray}
-            </div>
-        </div>
-    )
+    console.log(forecastArray)
+
 }

@@ -54,9 +54,6 @@ Typography
 
 .header--today-week {
   font-size: 1.25rem;
-  
-  display: flex;
-  
 }
 
 .header--today-week a {
@@ -295,7 +292,7 @@ LAYOUT
 
 .header--main-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .header--temp-buttons button {
@@ -322,17 +319,22 @@ LAYOUT
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  border: 1px solid #999999;
+  padding: 2rem;
+  max-width: fit-content;
+}
+
+.header--today-week a {
+  border: 1px solid #999999;
+  max-width: fit-content;
+  padding: 
 }
 
 .daily-weather--main-container {
   margin-right: 1rem;
-}
-
-.daily-weather--main-container {
   min-width: 120px;
   height: 10.8rem;
   padding: 1.5rem 1rem;
-  margin-top: 3rem;
 }
 
 
