@@ -54,12 +54,22 @@ Typography
 
 .header--today-week {
   font-size: 1.25rem;
+  display: flex;
+  
 }
 
 .header--today-week a {
   text-decoration: none;
-  margin-right: 1.5rem;
   color: #999999;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  max-width: fit-content;
+  padding: 1rem;
+  display: block;
+  background-color: #e3e3e3;
+  border: 1px solid #e3e3e3;
+  border-bottom: 1px solid #fafafa;
+  margin-bottom: -2px;
 }
 
 .header--today-week a:hover,
@@ -319,18 +329,15 @@ LAYOUT
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  border: 1px solid #999999;
-  padding: 2rem;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  padding: 0 2rem 2rem 2rem;
   max-width: fit-content;
-}
-
-.header--today-week a {
-  border: 1px solid #999999;
-  max-width: fit-content;
-  padding: 
 }
 
 .daily-weather--main-container {
+  margin-top: 2rem;
   margin-right: 1rem;
   min-width: 120px;
   height: 10.8rem;

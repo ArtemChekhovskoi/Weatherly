@@ -8,8 +8,8 @@ import {nanoid} from "nanoid"
 export default function WeeklyWeather() {
 
     const {forecast, isWeeklyForecast, turnWeeklyForecast, turnDailyForecast} = useContext(CurrentWeather)
-    const currentForecastStyle = {color: "#5B9BFC"}
-    
+    const currentForecastStyle = {color: "#5B9BFC", backgroundColor: "#fafafa"}
+
     function getCorrectDay(timestamp) {
         let currentDay = new Date(timestamp)
         var days = [
