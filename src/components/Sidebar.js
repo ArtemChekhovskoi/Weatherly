@@ -101,7 +101,7 @@ export default function Sidebar(props) {
                 {SwitchUnits()}
             </h2>
             <p className="sidebar--subtitle">
-               on {getDayOfTheWeek(weather.dt)}<span>{getTime(weather.dt)}</span>
+               on {getDayOfTheWeek(weather.dt)}, <span>{getTime(weather.dt)}</span>
             </p>
             <div className="sidebar--rain-chanse">
                 <img src={okEmoji} alt="weather icon" className="sidebar--ok-emoji"/>

@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import { CurrentWeather } from "../Context";
 import windGeo from "../img/windGeo.svg"
 import RenderMap from "./GoogleMap";
+import getWindSpeed from "../utils/getWindSpeed"
 
 export default function WindStatus() {
 
@@ -27,9 +28,12 @@ export default function WindStatus() {
                     {weather.wind.speed}
                 </span>
                 <span className="wind--subtitle">
-                {units === "metric" ? <span>km/h</span> : <span>MpH</span>}
-                    
+                    {units === "metric" ? <span>m/s</span> : <span>MpH</span>}
                 </span>
+                <p>
+                    {getWindSpeed(weather.wind.speed, units)}
+                </p>
+                
             </p>
             <div className="sidebar--location wind--geo" onClick={() => setIsMapShown(prevState => !prevState)}>
                 <img className="sidebar--geo-icon" src={windGeo} alt="geo logo" />

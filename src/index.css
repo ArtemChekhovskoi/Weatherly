@@ -66,10 +66,9 @@ Typography
   max-width: fit-content;
   padding: 1rem;
   display: block;
-  background-color: #e3e3e3;
+  background-color: #f2f2f2;
   border: 1px solid #e3e3e3;
-  border-bottom: 1px solid #fafafa;
-  margin-bottom: -2px;
+  margin-bottom: -1px;
 }
 
 .header--today-week a:hover,
@@ -211,7 +210,7 @@ LAYOUT
 }
 
 .sidebar--location {
-  margin: 40px auto 0 auto;
+  margin: 1.5rem auto 0 auto;
   cursor: pointer;
 
 }
@@ -329,7 +328,7 @@ LAYOUT
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  border: 1px solid #e3e3e3;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
   border-top-left-radius: 0;
   padding: 0 2rem 2rem 2rem;
@@ -477,7 +476,7 @@ LAYOUT
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .main-content {
     flex-direction: column;
   }
@@ -499,5 +498,14 @@ LAYOUT
   .weekly-weather-row,
   .sidebar--location-text {
     justify-content: center;
+  }
+  .header--main-container {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+  }
+
+  .sidebar--search-container {
+    margin-top: 3rem;
   }
 }

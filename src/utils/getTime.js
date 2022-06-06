@@ -5,7 +5,7 @@ function getTime(timestamp) {
     if (timestamp === 0) {
         return ""
     } else {
-        return ", " + `${hours}:${minutes}`
+        return `${hours}:${minutes}`
 }
 }
 

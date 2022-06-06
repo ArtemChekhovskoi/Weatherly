@@ -7,8 +7,15 @@ import {nanoid} from "nanoid"
 
 export default function WeeklyWeather() {
 
+
     const {forecast, isWeeklyForecast, turnWeeklyForecast, turnDailyForecast} = useContext(CurrentWeather)
-    const currentForecastStyle = {color: "#5B9BFC", backgroundColor: "#fafafa"}
+    const currentForecastStyle = {
+        color: "#5B9BFC", 
+        backgroundColor: "#fafafa",
+        borderBottom: "1px solid #fafafa",
+    }
+    const myRef = React.useRef(null)
+    const executeScroll = () => myRef.current.scrollIntoView()     
 
     function getCorrectDay(timestamp) {
         let currentDay = new Date(timestamp)
@@ -31,7 +38,7 @@ export default function WeeklyWeather() {
     function forecastHtml(day) {
         return(
             <div key={nanoid()} className="daily-weather--main-container container">
-                <p className="daily--title">{getCorrectDay(day.dt_txt)}{getTime(day.dt)}</p>
+                <p className="daily--title">{getCorrectDay(day.dt_txt)}, {getTime(day.dt)}</p>
                 <p className="daily--description">{day.weather[0].description}</p>
                 <img src={require(`../img/${day.weather[0].icon}.png`)} 
                     alt="weather icon" />
@@ -59,14 +66,14 @@ export default function WeeklyWeather() {
 
     return(
         <div className="weekly-weather--main-container">
-            <div className="header--today-week">
+            <div className="header--today-week" ref={myRef} onClick={executeScroll}>
                 <a 
                 style={isWeeklyForecast ? {} : currentForecastStyle}
                 onClick={turnDailyForecast}
-                href="#">Today</a>
+                href="#forecast-container">Today</a>
                 <a style={isWeeklyForecast ? currentForecastStyle : {}}
                 onClick={turnWeeklyForecast}
-                href="#">5 Days</a>
+                href="#forecast-container">5 Days</a>
             </div>
             <div className="weekly-weather-row">
                 {isWeeklyForecast ? weeklyArray : dayArray}
