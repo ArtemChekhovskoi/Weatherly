@@ -30,10 +30,9 @@ export default function WindStatus() {
                 <span className="wind--subtitle">
                     {units === "metric" ? <span>m/s</span> : <span>MpH</span>}
                 </span>
-                <p>
-                    {getWindSpeed(weather.wind.speed, units)}
-                </p>
-                
+            </p>
+            <p>
+                {getWindSpeed(weather.wind.speed, units)}
             </p>
             <div className="sidebar--location wind--geo" onClick={() => setIsMapShown(prevState => !prevState)}>
                 <img className="sidebar--geo-icon" src={windGeo} alt="geo logo" />

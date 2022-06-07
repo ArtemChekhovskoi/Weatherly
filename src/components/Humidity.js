@@ -1,5 +1,6 @@
 import React, {useContext} from "react"
 import { CurrentWeather } from "../Context"
+import getHumidityText from "../utils/getHumidityText"
 
 export default function Humidity() {
 
@@ -19,6 +20,9 @@ const {weather} = useContext(CurrentWeather)
                     <span className="wind--subtitle">
                         %
                     </span>
+                    </p>
+                    <p>
+                        {getHumidityText(weather.main.humidity)}
                     </p>
                 </div>
                 <div className="humidity--slider">

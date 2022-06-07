@@ -3,18 +3,21 @@ import { CurrentWeather } from "../Context"
 import SwitchUnits from "../utils/switchUnits"
 import { getTime } from "../utils/getTime"
 import {nanoid} from "nanoid"
+import getWindSpeed from "../utils/getWindSpeed"
 
 
 export default function WeeklyWeather() {
 
-
-    const {forecast, isWeeklyForecast, turnWeeklyForecast, turnDailyForecast} = useContext(CurrentWeather)
+   
+    const {forecast, isWeeklyForecast, turnWeeklyForecast, turnDailyForecast, units} = useContext(CurrentWeather)
+    const myRef = React.useRef()
+    
     const currentForecastStyle = {
         color: "#5B9BFC", 
         backgroundColor: "#fafafa",
         borderBottom: "1px solid #fafafa",
     }
-    const myRef = React.useRef(null)
+    
     const executeScroll = () => myRef.current.scrollIntoView()     
 
     function getCorrectDay(timestamp) {
@@ -45,6 +48,9 @@ export default function WeeklyWeather() {
                     <div className="daily-weather--max-min">
                     <p>
                         {day.main.temp.toFixed(1)} {SwitchUnits()}
+                    </p>
+                    <p className="daily--description">
+                        {getWindSpeed(day.wind.speed, units)}
                     </p>
                     </div>
             </div>
