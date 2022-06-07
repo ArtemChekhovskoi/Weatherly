@@ -483,20 +483,13 @@ LAYOUT
   .sidebar--main-container {
     max-width: 100%;
   }
-  .sidebar--main-img {
-    margin-right: auto;
-    margin-left: auto;
-  }
 
-  .highlight,
-  .sidebar--img-description {
+  .highlight {
     text-align: center;
   }
 
   .today--dashboard,
-  .sidebar--location-text,
-  .weekly-weather-row,
-  .sidebar--location-text {
+  .weekly-weather-row {
     justify-content: center;
   }
   .header--main-container {
@@ -506,6 +499,7 @@ LAYOUT
   }
 
   .sidebar--search-container {
+    margin: 0;
     margin-top: 3rem;
   }
 }
