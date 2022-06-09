@@ -70,7 +70,7 @@ export default function Sidebar(props) {
                                 };
 
                                 return (
-                                <div {...getSuggestionItemProps(suggestion, { style })}>
+                                <div key={suggestion.placeId} {...getSuggestionItemProps(suggestion, { style })}>
                                     {suggestion.description}
                                 </div>
                                 );
